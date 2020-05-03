@@ -7,8 +7,14 @@ class Kbf < Formula
   depends_on "go" => :build
 
   def install
-    system "gobuild.sh"
-    bin.install ".gobuild/bin/kbf" => "kbf"
+    ENV["GOPATH"] = buildpath
+    bin_path = buildpath/"src/github.com/eduardobarbosa/kbf"
+    bin_path.install Dir["*"]
+    cd bin_path do
+      # Install the compiled binary into Homebrew's `bin` - a pre-existing
+      # global variable
+      system "go", "build", "-o", bin/"kbf", "."
+    end
   end
 
   test do
