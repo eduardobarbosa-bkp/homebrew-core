@@ -1,8 +1,8 @@
 class Kbf < Formula
   desc "Kubernetes yml port forwarding"
   homepage "https://github.com/eduardobarbosa/kbf"
-  url "https://github.com/eduardobarbosa/kbf/archive/v0.0.2.tar.gz"
-  sha256 "dbda91546485a6ebee5176b227a49e89007d890a8623772dbecc02789a1cdd95"
+  url "https://github.com/eduardobarbosa/kbf/archive/v0.0.3.tar.gz"
+  sha256 "5edbea304a1d22b24d82b23b773995088bab6a5db6369ecff010283d23e956ec"
 
   depends_on "go" => :build
 
